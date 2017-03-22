@@ -5,7 +5,7 @@ module Discriminator
         begin
           "#{module_name.to_s.camelize}::#{attrs.fetch(on.to_s, default).to_s.camelize}".constantize
         rescue NameError
-          super
+          super(attrs)
         end
       }
     end
